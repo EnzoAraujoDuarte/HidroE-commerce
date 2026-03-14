@@ -1,0 +1,6 @@
+export { ProductGallery } from './product-gallery'
+export { BuyZone } from './buy-zone'
+export { VariantSelector } from './variant-selector'
+export { AddToCartButton } from './add-to-cart-button'
+export { ProductView } from './product-view'
+export { RelatedProducts } from './related-products'

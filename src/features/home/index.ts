@@ -1,0 +1,5 @@
+export { Hero } from './hero'
+export { EditorialSection } from './editorial-section'
+export { CollectionHighlights } from './collection-highlights'
+export { BrandStatement } from './brand-statement'
+export { Manifesto } from './manifesto'
