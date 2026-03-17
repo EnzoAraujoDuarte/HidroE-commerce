@@ -269,7 +269,22 @@ export function LookbookExperience({
           <Container size="wide" className="py-16 md:py-20 lg:py-28">
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
               <div className={cn(index % 2 === 1 && 'lg:order-2')}>
-                <div className="lg:sticky lg:top-28">
+                <div className="grid gap-8 lg:gap-12">
+                  <div
+                    data-lookbook-step
+                    className="relative aspect-[16/10] overflow-hidden rounded-[1.75rem] bg-bg-muted"
+                  >
+                    <Image
+                      src={chapter.accentMedia.src}
+                      alt={chapter.accentMedia.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 42vw"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,10,9,0.02)_0%,rgba(12,10,9,0.16)_100%)]" />
+                  </div>
+
+                  <div className="lg:sticky lg:top-28">
                   <button
                     data-lookbook-media
                     onClick={(event) => openViewer(index, event.currentTarget)}
@@ -299,6 +314,7 @@ export function LookbookExperience({
                     <span>{chapter.label}</span>
                     <span>{chapter.index}</span>
                   </div>
+                </div>
                 </div>
               </div>
 

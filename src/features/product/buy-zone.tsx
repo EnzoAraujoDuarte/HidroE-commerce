@@ -1,12 +1,13 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { Eyebrow, Heading, Divider } from '@/components/primitives'
+import { Eyebrow, Heading, Divider, Text } from '@/components/primitives'
 import { VariantSelector } from './variant-selector'
 import { AddToCartButton } from './add-to-cart-button'
 import { ProductDetails } from './product-details'
 import { ProductMaterialSummary } from './product-material-summary'
 import { formatPrice, type ProductDetail, type SelectedOption } from '@/lib/commerce'
+import { cn } from '@/lib/utils/cn'
 
 interface BuyZoneProps {
   product: ProductDetail
@@ -52,30 +53,55 @@ export function BuyZone({ product, onVariantChange }: BuyZoneProps) {
 
   const price = selectedVariant?.price ?? product.price
   const compareAtPrice = selectedVariant?.compareAtPrice ?? product.compareAtPrice
-  const hasDiscount = compareAtPrice && parseFloat(compareAtPrice.amount) > parseFloat(price.amount)
+  const hasDiscount =
+    compareAtPrice && parseFloat(compareAtPrice.amount) > parseFloat(price.amount)
   const isAvailable = selectedVariant?.availableForSale ?? product.availableForSale
 
   return (
-    <div className="space-y-6">
-      {product.vendor && (
-        <Eyebrow>{product.vendor}</Eyebrow>
-      )}
+    <div className="space-y-5">
+      {/* Brand + title */}
+      <div className="space-y-2">
+        {product.vendor && <Eyebrow>{product.vendor}</Eyebrow>}
+        <Heading as="h1" size="xl">
+          {product.title}
+        </Heading>
+      </div>
 
-      <Heading as="h1" size="xl">
-        {product.title}
-      </Heading>
-
+      {/* Price block */}
       <div className="flex items-baseline gap-3">
-        <span className="text-xl font-medium">{formatPrice(price)}</span>
+        <span
+          className={cn(
+            'text-2xl font-medium tracking-tight',
+            hasDiscount ? 'text-text' : 'text-text'
+          )}
+        >
+          {formatPrice(price)}
+        </span>
         {hasDiscount && (
-          <span className="text-lg text-text-muted line-through">
-            {formatPrice(compareAtPrice)}
-          </span>
+          <>
+            <span className="text-base text-text-muted line-through">
+              {formatPrice(compareAtPrice!)}
+            </span>
+            <span className="rounded-full bg-bg-muted px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wider text-text-secondary">
+              Sale
+            </span>
+          </>
         )}
       </div>
 
+      {/* Availability badge */}
+      {!isAvailable && (
+        <div className="flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-text-muted" />
+          <Text size="sm" color="muted">
+            Currently unavailable
+          </Text>
+        </div>
+      )}
+
       <ProductMaterialSummary materialProfile={product.materialProfile} />
 
+      {/* Variant selector */}
       {product.options.length > 0 && (
         <>
           <Divider />
@@ -90,11 +116,13 @@ export function BuyZone({ product, onVariantChange }: BuyZoneProps) {
 
       <Divider />
 
+      {/* Add to cart */}
       <AddToCartButton
         variantId={selectedVariant?.id ?? product.variants[0]?.id ?? ''}
         availableForSale={isAvailable}
       />
 
+      {/* Details accordion */}
       <ProductDetails
         description={product.description}
         descriptionHtml={product.descriptionHtml}

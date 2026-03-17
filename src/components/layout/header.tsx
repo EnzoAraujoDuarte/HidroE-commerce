@@ -45,7 +45,7 @@ export function Header() {
                 isImmersiveRoute && !isScrolled ? 'text-text-inverse' : 'text-text'
               )}
             >
-              HYDROGEN
+              HYDRO
             </Link>
 
             <div className="hidden md:flex items-center gap-10">

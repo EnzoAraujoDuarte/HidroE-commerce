@@ -44,6 +44,34 @@ export const PRODUCT_CARD_FRAGMENT = /* GraphQL */ `
         ...MoneyFragment
       }
     }
+    options {
+      id
+      name
+      values
+    }
+    variants(first: 20) {
+      edges {
+        node {
+          id
+          title
+          availableForSale
+          price {
+            ...MoneyFragment
+          }
+          compareAtPrice {
+            ...MoneyFragment
+          }
+          selectedOptions {
+            name
+            value
+          }
+          image {
+            url
+            altText
+          }
+        }
+      }
+    }
   }
   ${IMAGE_FRAGMENT}
   ${MONEY_FRAGMENT}

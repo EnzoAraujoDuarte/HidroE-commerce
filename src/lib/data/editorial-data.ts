@@ -39,7 +39,7 @@ export const homeStoryChapters = [
     label: 'Finish',
     title: 'Surface, hand-feel and craft carry the final note.',
     description:
-      'Close inspection reveals the collection’s real luxury: dependable fabrication, tactile comfort and the quiet confidence of pieces meant to be worn often.',
+      'Close inspection reveals the collection real luxury: dependable fabrication, tactile comfort and the quiet confidence of pieces meant to be worn often.',
     details: [
       'Materiality is treated as product proof, not decoration.',
       'Every finish is calibrated for repeat wear and visual calm.',
@@ -48,7 +48,7 @@ export const homeStoryChapters = [
       src: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1400&q=80',
       alt: 'Close-up editorial image highlighting garment texture',
     },
-    caption: 'Craft visible at arm’s length.',
+    caption: 'Craft visible at arm\'s length.',
   },
 ]
 
@@ -89,6 +89,10 @@ export const lookbookData = {
         src: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1600&q=80',
         alt: 'Minimal editorial styling with cotton essentials',
       },
+      accentMedia: {
+        src: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=80',
+        alt: 'Editorial portrait in neutral cotton layering',
+      },
       notes: [
         {
           label: 'Material cue',
@@ -111,7 +115,7 @@ export const lookbookData = {
       shopCollectionHandle: 'featured',
       shopTitle: 'Shop the layering story',
       shopDescription:
-        'A tighter edit of pieces that carry the collection’s depth, softness and shadow.',
+        'A tighter edit of pieces that carry the depth, softness and shadow of the collection.',
       title: 'Midweight layers create depth through shadow, not ornament.',
       intro:
         'This chapter shifts the cadence. Hoodies, outer layers and softened tailoring stack tone on tone so the eye reads volume gradually.',
@@ -120,6 +124,10 @@ export const lookbookData = {
       media: {
         src: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1600&q=80',
         alt: 'Layered neutral tailoring styled for an editorial story',
+      },
+      accentMedia: {
+        src: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&q=80',
+        alt: 'Editorial detail of layered fabric and shadow',
       },
       notes: [
         {
@@ -152,6 +160,10 @@ export const lookbookData = {
       media: {
         src: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1600&q=80',
         alt: 'Close-up of premium fabric texture and tailored drape',
+      },
+      accentMedia: {
+        src: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&q=80',
+        alt: 'Fashion editorial close-up showing garment finish',
       },
       notes: [
         {

@@ -333,6 +333,15 @@ html.lenis body {
   }
 }
 
+@keyframes galleryCrossfade {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .animate-in {
   animation: fade-up 0.5s var(--ease-editorial) forwards;
 }

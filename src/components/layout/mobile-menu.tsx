@@ -130,7 +130,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             onClick={onClose}
             className="ui-link text-lg font-medium tracking-tight"
           >
-            HYDROGEN
+            HYDRO
           </Link>
           <p className="text-sm text-text-muted mt-2">
             Contemporary fashion for the modern individual.

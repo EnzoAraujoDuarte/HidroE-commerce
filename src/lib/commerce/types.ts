@@ -23,6 +23,8 @@ export interface ProductCard {
   image: ProductImage
   hoverImage?: ProductImage
   availableForSale: boolean
+  variants?: ProductVariant[]
+  options?: ProductOption[]
 }
 
 export interface ProductMaterialProfile {

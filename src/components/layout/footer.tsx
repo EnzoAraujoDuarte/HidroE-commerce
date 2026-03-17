@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
           <div className="col-span-2">
             <Link href="/" className="ui-link inline-block text-xl font-medium tracking-tight">
-              HYDROGEN
+              HYDRO
             </Link>
             <Text color="secondary" className="mt-4 max-w-xs">
               Contemporary fashion for the modern individual. Thoughtfully designed, responsibly made.
@@ -50,7 +50,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8">
           <Text size="sm" color="muted">
-            © {new Date().getFullYear()} Hydrogen. All rights reserved.
+            © {new Date().getFullYear()} Hydro. All rights reserved.
           </Text>
           <Text size="sm" color="muted">
             Portfolio Project

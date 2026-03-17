@@ -99,6 +99,9 @@ export function mapProductCard(raw: RawProduct): ProductCard {
     parseFloat(raw.compareAtPriceRange.minVariantPrice.amount) >
       parseFloat(raw.priceRange.minVariantPrice.amount)
 
+  const variants = raw.variants?.edges.map((e) => mapProductVariant(e.node))
+  const options = raw.options?.map(mapProductOption)
+
   return {
     id: raw.id,
     handle: raw.handle,
@@ -111,6 +114,8 @@ export function mapProductCard(raw: RawProduct): ProductCard {
     image: images[0] ?? mapImage(raw.featuredImage),
     hoverImage: images[1],
     availableForSale: raw.availableForSale,
+    variants: variants && variants.length > 0 ? variants : undefined,
+    options: options && options.length > 0 ? options : undefined,
   }
 }
 
